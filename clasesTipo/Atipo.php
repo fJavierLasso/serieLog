@@ -2,7 +2,7 @@
 namespace ClasesTipo;
 abstract class Atipo {
 
-    private $error;
+    protected $error;
 
     public function validar($valor){ //devuelve true si el valor no es nulo ni está vacío + validaciones específicas de cada tipo.
         if ($valor == null || $valor == "" ) {

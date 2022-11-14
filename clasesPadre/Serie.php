@@ -1,5 +1,5 @@
 <?php
-
+namespace clasesPadre;
 class Serie
 {
 
@@ -54,6 +54,7 @@ class Serie
         $content = json_decode(file_get_contents($file), TRUE);
 
     }
+
 
 
 }
