@@ -17,16 +17,7 @@
             $this->longitud = $longitud;
             $this->name = $name;
         }
-        //getters and setters
-        public function setTexto($texto){$this->texto = $texto;}
-        public function getTexto(){return $this->texto;}
-        public function setLongitud($longitud){$this->longitud = $longitud;}
-        public function getLongitud(){return $this->longitud;}
-        public function setName($name){$this->name = $name;}
-        public function getName(){return $this->name;}
-        public function setError($error){$this->error = $error;}
-        public function getError(){return $this->error;}
-        
+     
         //métodos
         function validarEspecifico($cadena){
             // la cadena solamente puede contener letras (minus y mayus), números, espacios en blanco, puntos, comas, interrogaciones, exclamaciones, barras bajas y guiones
