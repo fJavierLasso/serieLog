@@ -39,7 +39,7 @@
             //a la cadena le metemos cleanData para evitar cross-site scripting
             if (preg_match($pattern, $this->cleanData($cadena))) return true;
             else{
-                $this->error = "No se admiten carácteres especiales y el tamaño máximo es ${$this->error}";
+                $this->error = "No se admiten carácteres especiales y el tamaño máximo es ${$this->longitud}";
                 return false;
             }
         }
