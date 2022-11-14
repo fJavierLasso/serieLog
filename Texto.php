@@ -5,6 +5,7 @@
         private $texto;
         private $longitud;
         private $name;
+        private $error;
         //constantes públicas para poder utilizarse fuera
         public const LONG_NOMBRE = 25; 
         public const LONG_DESCRIPCION = 500;
@@ -23,6 +24,8 @@
         public function getLongitud(){return $this->longitud;}
         public function setName($name){$this->name = $name;}
         public function getName(){return $this->name;}
+        public function setError($error){$this->error = $error;}
+        public function getError(){return $this->error;}
         
         //métodos
         function validarEspecifico($cadena){
@@ -35,7 +38,10 @@
             //si el patrón coincide todo oki, si no, un echo con un error.
             //a la cadena le metemos cleanData para evitar cross-site scripting
             if (preg_match($pattern, $this->cleanData($cadena))) return true;
-            else return false;
+            else{
+                $this->error = "No se admiten carácteres especiales y el tamaño máximo es ${$this->error}";
+                return false;
+            }
         }
 
         function pintar(){
@@ -49,6 +55,8 @@
                 echo "<br>";
                 echo "<input type='text' id=".$this->name." name=".$this->name." placeholder='Introduce tu ".$this->name."'>";
             }
+            echo "<br>";
+            echo "<label for=".$this->name.">Carácteres especiales admitidos: <b>, . ¿ ? ¡ ! _ -</b> </label>";
             echo "<br>";
         }
 
