@@ -45,7 +45,11 @@ class Serie
     public function guardar()
     {
         $file = 'bbdd.txt';
-        $content = json_encode($my_variable);
+        $content = '';
+
+        foreach ($this->valores as $valor) {
+            $content .= $valor->getValor() . " ";
+        }
         file_put_contents($file, $content);
         $content = json_decode(file_get_contents($file), TRUE);
 
