@@ -1,5 +1,5 @@
 <?php
-namespace ClasesTipo;
+//namespace ClasesTipo;
 abstract class Atipo {
 
     public function validar($valor){
