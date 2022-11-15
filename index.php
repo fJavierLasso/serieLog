@@ -11,7 +11,6 @@ spl_autoload_register(function ($class) {
 
 });
 
-
 $serie = new clasesPadre\Serie($_POST);
 $serie->validarGlobal();
 
@@ -27,7 +26,7 @@ $serie->validarGlobal();
 </head>
 
     <h1>Introduce los datos de tu serie</h1>
-    
+
     <?php
     $serie->pintarGlobal();
     ?> 
