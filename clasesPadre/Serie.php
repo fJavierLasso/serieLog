@@ -25,7 +25,7 @@ class Serie
         array_push($this->valores, new \clasesTipo\Check("emision",$emision));
         // array_push($this->valores, new clasesTipo\TextoArray($diaEstreno, "diaEstreno"));
         array_push($this->valores, new \clasesTipo\Check("notificaciones",$notificaciones));
-        // array_push($this->valores, new clasesTipo\Numero($valoracion, "valoracion"));
+        array_push($this->valores, new \clasesTipo\Numero($valoracion, "valoracion"));
         array_push($this->valores, new \clasesTipo\Texto($resena, 500, "reseña"));
     }
 
