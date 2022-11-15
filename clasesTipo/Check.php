@@ -17,7 +17,11 @@ class Check extends Atipo {
     
         public function pintar() {
             echo "<label for='$this->name'>$this->name</label>";
-            echo "<input type='checkbox' name='$this->name' value='$this->valor'>";
+            if (isset($_POST[$this->name])) {
+                echo "<input type='checkbox' name='$this->name' value='$this->valor' checked>";
+            } else {
+                echo "<input type='checkbox' name='$this->name' value='$this->valor'>";
+            }
             echo "<br>";
         }
 
