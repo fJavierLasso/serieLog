@@ -2,9 +2,9 @@
     namespace clasesTipo;
     class Texto extends Atipo {
 
-        private $valor;
+        protected $valor;
         private $longitud;
-        private $name;
+        protected $name;
         protected $error; //poner como privi
         //constantes públicas para poder utilizarse fuera
         public const LONG_NOMBRE = 25; 
@@ -44,11 +44,11 @@
             if ($this->longitud >= self::LIMITE_LONG_TEXTAREA){
                 echo "<label for='".$this->name."'>Introduce la ".$this->name."</label>";
                 echo "<br>";
-                echo "<textarea id='".$this->name."' name='".$this->name."' placeholder='Introduce la ".$this->name."' rows='10' cols='50'>".$_POST[$this->name]."</textarea>";
+                echo "<textarea id='".$this->name."' name='".$this->name."' placeholder='Introduce la ".$this->name."' rows='10' cols='50'>".$this->name."</textarea>";
             }else{
                 echo "<label for='".$this->name."'>Introduce tu ".$this->name."</label>";
                 echo "<br>";
-                echo "<input type='text' id='".$this->name."' name='".$this->name."' placeholder='Introduce tu ".$this->name."' value='".$_POST[$this->name]."'>";
+                echo "<input type='text' id='".$this->name."' name='".$this->name."' placeholder='Introduce tu ".$this->name."' value='".$this->name."'>";
             }
             echo "<br>";
             echo "<label for='".$this->name."'>Carácteres especiales admitidos: <b>, . ¿ ? ¡ ! _ -</b> </label>";

@@ -1,5 +1,7 @@
 <?php
 namespace clasesPadre;
+
+
 class Serie
 {
 
@@ -8,21 +10,30 @@ class Serie
 
     public function __construct($post)
     {
-        array_push($this->valores, new clasesTipo\Texto($post[0], 25, "nombre"));
-        array_push($this->valores, new clasesTipo\TextoArray($post[1], "genero"));
-        array_push($this->valores, new clasesTipo\TextoArray($post[2], "plataforma"));
-        array_push($this->valores, new clasesTipo\Estado($post[3], "emision"));
-        array_push($this->valores, new clasesTipo\TextoArray($post[4], "diaEstreno"));
-        array_push($this->valores, new clasesTipo\Estado($post[5], "notificaciones"));
-        array_push($this->valores, new clasesTipo\Numero($post[6], "valoracion"));
-        array_push($this->valores, new clasesTipo\Texto($post[7], 500, "resena"));
+        $nombre = isset($post['nombre']) ? $post['nombre'] : null;
+        $genero = isset($post['genero']) ? $post['genero'] : null;
+        $plataforma = isset($post['plataforma']) ? $post['plataforma'] : null;
+        $emision = isset($post['emision']) ? $post['emision'] : null;
+        $diaEstreno = isset($post['diaEstreno']) ? $post['diaEstreno'] : null;
+        $notificaciones = isset($post['notificaciones']) ? $post['notificaciones'] : null;
+        $valoracion = isset($post['valoracion']) ? $post['valoracion'] : null;
+        $resena = isset($post['reseña']) ? $post['reseña'] : null;
+
+        array_push($this->valores, new \clasesTipo\Texto($nombre, 25, "nombre"));
+        // array_push($this->valores, new clasesTipo\TextoArray($genero, "genero"));
+        // array_push($this->valores, new clasesTipo\TextoArray($plataforma, "plataforma"));
+        array_push($this->valores, new \clasesTipo\Check("emision",$emision));
+        // array_push($this->valores, new clasesTipo\TextoArray($diaEstreno, "diaEstreno"));
+        array_push($this->valores, new \clasesTipo\Check("notificaciones",$notificaciones));
+        // array_push($this->valores, new clasesTipo\Numero($valoracion, "valoracion"));
+        array_push($this->valores, new \clasesTipo\Texto($resena, 500, "reseña"));
     }
 
     public function validarGlobal()
     {
         if (!empty($_POST)) { //valida sólo si se ha enviado mínimo un formulario. Si el post está empty, no valida nada.
             foreach ($this->valores as $valor) {
-                if (!$valor->validar()) {
+                if (!$valor->validar($valor)) {
                     $valor->imprimirError();
                     $this->esValida = false;
                 } else {

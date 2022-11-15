@@ -3,10 +3,12 @@ namespace clasesTipo;
 abstract class Atipo {
 
     protected $error;
+    protected $name;
+    protected $valor;
 
     public function validar($valor){ //devuelve true si el valor no es nulo ni está vacío + validaciones específicas de cada tipo.
         if ($valor == null || $valor == "" ) {
-            $this->error = "El campo no puede estar vacío";
+            $this->error = "El campo $this->name no puede estar vacío<br>";
             return false;
         } else {
             return $this->validarEspecifico($valor); 
@@ -15,10 +17,14 @@ abstract class Atipo {
 
     //limpieza de carácteres especiales HTML para evitar cross-site scripting
     function cleanData($data) {
-        $data = trim($data);
-        $data = stripslashes($data);
-        $data = htmlspecialchars($data);
-        return $data;
+        if (is_string($data)) {
+            $data = trim($data);
+            $data = stripslashes($data);
+            $data = htmlspecialchars($data);
+            return $data;
+        } else {
+            return $data;
+        }
     }
 
     function imprimirError() {

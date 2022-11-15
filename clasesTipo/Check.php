@@ -3,12 +3,12 @@ namespace clasesTipo;
 
 class Check extends Atipo {
     
-        private $valor; //true o false
-        private $nombre; //para el label
+        protected $valor; //true o false
+        protected $name; //para el label
     
-        public function __construct($nombre, $valor = false) {
+        public function __construct($name, $valor = false) {
             $this->valor = $valor;
-            $this->nombre = $nombre;
+            $this->name = $name;
         }
     
         public function validarEspecifico($valor) {
@@ -16,8 +16,9 @@ class Check extends Atipo {
         }
     
         public function pintar() {
-            echo "<label for='$this->nombre'>$this->nombre</label>";
-            echo "<input type='checkbox' name='$this->nombre' value='$this->valor'>";
+            echo "<label for='$this->name'>$this->name</label>";
+            echo "<input type='checkbox' name='$this->name' value='$this->valor'>";
+            echo "<br>";
         }
     
     
