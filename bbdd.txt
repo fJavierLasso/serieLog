@@ -1,1 +1,16 @@
-Pepe 1 1 Mierda de peli 
+<tr><td>nombre</td><td>Serie1</td>
+<td>emision</td><td></td>
+<td>valoracion</td><td>3</td>
+<td>reseña</td><td>bueeeeno</td>
+</tr><tr><td>nombre</td><td>Serie2</td>
+<td>emision</td><td></td>
+<td>notificaciones</td><td></td>
+<td>valoracion</td><td>0</td>
+<td>reseña</td><td>una puta mierda</td>
+</tr><tr><td>nombre</td><td>asdf</td>
+<td>valoracion</td><td>3</td>
+<td>reseña</td><td>wergqer</td>
+</tr><tr><td>nombre</td><td>holaaaas</td>
+<td>valoracion</td><td>5</td>
+<td>reseña</td><td>pepino</td>
+</tr>

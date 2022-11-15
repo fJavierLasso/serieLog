@@ -18,7 +18,7 @@ $serie = new clasesPadre\Serie($_POST);
 
 if ($serie->validarGlobal()) {
     $serie->guardar($_POST); //hacer guardar; que guarde los valores en un archivo de texto.
-    //meter header a tablaSeries cuando esté hecha.
+    header("Location: tablaSeries.php");
 } 
 
 ?>

@@ -22,9 +22,9 @@ class Serie
         array_push($this->valores, new \clasesTipo\Texto($nombre, 25, "nombre"));
         // array_push($this->valores, new clasesTipo\TextoArray($genero, "genero"));
         // array_push($this->valores, new clasesTipo\TextoArray($plataforma, "plataforma"));
-        array_push($this->valores, new \clasesTipo\Check("emision",$emision));
+        array_push($this->valores, new \clasesTipo\Check("emision", $emision));
         // array_push($this->valores, new clasesTipo\TextoArray($diaEstreno, "diaEstreno"));
-        array_push($this->valores, new \clasesTipo\Check("notificaciones",$notificaciones));
+        array_push($this->valores, new \clasesTipo\Check("notificaciones", $notificaciones));
         array_push($this->valores, new \clasesTipo\Numero($valoracion, "valoracion"));
         array_push($this->valores, new \clasesTipo\Texto($resena, 500, "reseña"));
     }
@@ -37,7 +37,7 @@ class Serie
                 if (!$valor->validar($valor->getValor())) {
                     $valor->imprimirError();
                     $val = false;
-                } 
+                }
             }
             return $val;
         }
@@ -58,15 +58,22 @@ class Serie
         echo "voy a guardar:";
         print_r($post);
         echo "impreso desde el método Serie->guardar(), que aún no está escrito<hr>";
-        // $file = 'bbdd.txt';
-        // $content = '';
 
-        // foreach ($post as $valor) {
-        //     $content .= $valor->getValor() . " ";
-        //     echo($valor->getValor() . "  " . $content);
-        // }
-        // file_put_contents($file, $content);
-        // $content = json_decode(file_get_contents($file), TRUE);
+        $file = 'bbdd.txt';
+        // Open the file to get existing content
+        $current = file_get_contents($file);
+        // Append a new series to the file
+        $current .= "<tr>";
+        foreach ($post as $key => $value) {
+            
+            $current .= "<td>" . $key . "</td><td>" . $value . "</td>\n";
+            
+        }
+        $current .= "</tr>";
+
+        echo $current;
+        // Write the contents back to the file
+        file_put_contents($file, $current);
 
     }
 
