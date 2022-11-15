@@ -6,24 +6,16 @@ abstract class Atipo {
     protected $name;
     protected $valor;
 
-    public function validar($valor){ //devuelve true si el valor no es nulo ni está vacío + validaciones específicas de cada tipo.
-        if ($valor == null || $valor == "" ) {
-            $this->error = "El campo $this->name no puede estar vacío<br>";
-            return false;
+    public function validar($valor = null){ //devuelve true si el valor no es nulo ni está vacío + validaciones específicas de cada tipo.
+        if (is_bool($valor)) {
+            return $this->validarEspecifico($valor);
         } else {
-            return $this->validarEspecifico($valor); 
-        }
-    }
-
-    //limpieza de carácteres especiales HTML para evitar cross-site scripting
-    function cleanData($data) {
-        if (is_string($data)) {
-            $data = trim($data);
-            $data = stripslashes($data);
-            $data = htmlspecialchars($data);
-            return $data;
-        } else {
-            return $data;
+            if (is_null($valor) || $valor == "") {
+                $this->error = "El campo $this->name no puede estar vacío<br>";
+                return false;
+            } else {
+                return $this->validarEspecifico($valor);
+            }
         }
     }
 

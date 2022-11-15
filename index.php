@@ -6,13 +6,20 @@ spl_autoload_register(function ($class) {
     $classPath = realpath("./");
     $file = str_replace('\\','/', $class);
     $include = "$classPath/${file}.php";
-    echo $include . "<hr>";
     require($include);
 
 });
 
+echo "Valores añadidos al post: ";
+print_r($_POST); //hecho para debugging. Borrar cuando se termine todo.
+echo ("<hr>"); //hecho para debugging. Borrar cuando se termine todo.
+
 $serie = new clasesPadre\Serie($_POST);
-$serie->validarGlobal();
+
+if ($serie->validarGlobal()) {
+    $serie->guardar($_POST); //hacer guardar; que guarde los valores en un archivo de texto.
+    //meter header a tablaSeries cuando esté hecha.
+} 
 
 ?>
 

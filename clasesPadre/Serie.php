@@ -13,9 +13,9 @@ class Serie
         $nombre = isset($post['nombre']) ? $post['nombre'] : null;
         $genero = isset($post['genero']) ? $post['genero'] : null;
         $plataforma = isset($post['plataforma']) ? $post['plataforma'] : null;
-        $emision = isset($post['emision']) ? $post['emision'] : null;
+        $emision = isset($post['emision']);
         $diaEstreno = isset($post['diaEstreno']) ? $post['diaEstreno'] : null;
-        $notificaciones = isset($post['notificaciones']) ? $post['notificaciones'] : null;
+        $notificaciones = isset($post['notificaciones']);
         $valoracion = isset($post['valoracion']) ? $post['valoracion'] : null;
         $resena = isset($post['reseña']) ? $post['reseña'] : null;
 
@@ -32,16 +32,14 @@ class Serie
     public function validarGlobal()
     {
         if (!empty($_POST)) { //valida sólo si se ha enviado mínimo un formulario. Si el post está empty, no valida nada.
+            $val = true;
             foreach ($this->valores as $valor) {
-                if (!$valor->validar($valor)) {
+                if (!$valor->validar($valor->getValor())) {
                     $valor->imprimirError();
-                    $this->esValida = false;
-                } else {
-                    $this->guardar(); //si todo está bien, guardamos valores y nos vamos a tablaSeries.php
-                    header("Location: tablaSeries.php");
-                }
+                    $val = false;
+                } 
             }
-
+            return $val;
         }
     }
 
@@ -54,16 +52,21 @@ class Serie
         echo "<input type='submit' value='Enviar'></form>";
     }
 
-    public function guardar()
+    public function guardar($post)
     {
-        $file = 'bbdd.txt';
-        $content = '';
 
-        foreach ($this->valores as $valor) {
-            $content .= $valor->getValor() . " ";
-        }
-        file_put_contents($file, $content);
-        $content = json_decode(file_get_contents($file), TRUE);
+        echo "voy a guardar:";
+        print_r($post);
+        echo "impreso desde el método Serie->guardar(), que aún no está escrito<hr>";
+        // $file = 'bbdd.txt';
+        // $content = '';
+
+        // foreach ($post as $valor) {
+        //     $content .= $valor->getValor() . " ";
+        //     echo($valor->getValor() . "  " . $content);
+        // }
+        // file_put_contents($file, $content);
+        // $content = json_decode(file_get_contents($file), TRUE);
 
     }
 

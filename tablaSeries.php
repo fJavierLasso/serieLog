@@ -3,3 +3,8 @@ También tendremos un botón para volver a la página de series.
 
 Si nos sobra tiempo, añadiremos botones para eliminar series de esta lista.
 Y la función de que te avise si hay capítulo de serie el día de la semana.-->
+
+<?php
+print_r($_POST);
+
+?>
