@@ -1,5 +1,5 @@
 <?php
-namespace ClasesTipo;
+namespace clasesTipo;
 abstract class Atipo {
 
     protected $error;
