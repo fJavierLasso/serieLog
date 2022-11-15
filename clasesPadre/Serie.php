@@ -55,10 +55,6 @@ class Serie
     public function guardar($post)
     {
 
-        echo "voy a guardar:";
-        print_r($post);
-        echo "impreso desde el método Serie->guardar(), que aún no está escrito<hr>";
-
         $file = 'bbdd.txt';
         // Open the file to get existing content
         $current = file_get_contents($file);
