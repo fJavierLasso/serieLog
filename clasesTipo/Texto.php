@@ -57,13 +57,13 @@ class Texto extends Atipo
     function pintar(){
         //si supera LIMITE_LONG_TEXTAREA (80 chars) pinta un textarea, si no, un input tipo texto
         if ($this->longitud >= self::LIMITE_LONG_TEXTAREA){
-            echo "<label for='".$this->name."'>Introduce la ".$this->name."</label>";
+            echo "<label for='".$this->name."'>".$this->name."</label>";
             echo "<br>";
-            echo "<textarea id='".$this->name."' name='".$this->name."' placeholder='Introduce la ".$this->name."' rows='10' cols='50'>".$this->valor."</textarea>";
+            echo "<textarea id='".$this->name."' name='".$this->name."' placeholder='Me pareció...' rows='10' cols='50'>".$this->valor."</textarea>";
         }else{
-            echo "<label for='".$this->name."'>Introduce ".$this->name."</label>";
+            echo "<label for='".$this->name."'>".$this->name."</label>";
             echo "<br>";
-            echo "<input type='text' id='".$this->name."' name='".$this->name."' placeholder='Introduce tu ".$this->name."' value='".$this->valor."'>";
+            echo "<input type='text' id='".$this->name."' name='".$this->name."' placeholder='Serie...' value='".$this->valor."'>";
         }
         echo "<br>";
     }

@@ -21,8 +21,7 @@ class Check extends Atipo {
                 echo "<input type='checkbox' name='$this->name' value='$this->valor' checked>";
             } else {
                 echo "<input type='checkbox' name='$this->name' value='$this->valor'>";
-            }
-            echo "<br>";
+            }  
         }
 
         public function getValor() {

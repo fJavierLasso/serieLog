@@ -21,7 +21,7 @@ abstract class Atipo {
 
     function imprimirError() {
         if ($this->error != null) {
-            echo $this->error;
+            echo "<div class='error'>$this->error</div>";
             return false; //Si hay errores devuelve un false!
         }
     }

@@ -47,9 +47,11 @@ class Serie
     {
         echo "<form action='index.php' method='post'>";
         foreach ($this->valores as $valor) {
+            echo "<div class='elemento'>";
             $valor->pintar();
+            echo "</div>";
         }
-        echo "<input type='submit' value='Enviar'></form>";
+        echo "<input type='submit' value='Enviar' class='btn btn-primary'></form>";
     }
 
     public function guardar($post)

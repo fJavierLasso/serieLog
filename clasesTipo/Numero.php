@@ -27,7 +27,7 @@ class Numero extends Atipo {
     }
 
     function pintar() {
-        $input = '<label for="'.$this->name.'">¿Del '.self::MIN_VALOR.' al '.self::MAX_VALOR.' que nota le das?</label>
+        $input = '<br><label for="'.$this->name.'">¿Cuánto te gustó?</label><br>
         <input type="range" value="'.$this->numero.'" min="'.self::MIN_VALOR.'" max="'.self::MAX_VALOR.'" name="'.$this->name.'" id="'.$this->name.'"><br>';
 
         print($input);
