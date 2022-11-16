@@ -20,9 +20,9 @@ class Serie
         $resena = isset($post['reseña']) ? $post['reseña'] : null;
 
         array_push($this->valores, new \clasesTipo\Texto($nombre, 25, "nombre"));
-        // array_push($this->valores, new \clasesTipo\TextoArray($genero, "generos"));
-        // array_push($this->valores, new \clasesTipo\TextoArray($plataforma, "plataformas"));
-        // array_push($this->valores, new \clasesTipo\TextoArray($diaEstreno, "dias"));
+        array_push($this->valores, new \clasesTipo\TextoArray($genero, "generos"));
+        array_push($this->valores, new \clasesTipo\TextoArray($plataforma, "plataformas"));
+        array_push($this->valores, new \clasesTipo\TextoArray($diaEstreno, "dias"));
         array_push($this->valores, new \clasesTipo\Numero($valoracion, "valoracion"));
         array_push($this->valores, new \clasesTipo\Texto($resena, 500, "reseña"));
         array_push($this->valores, new \clasesTipo\Check("emision", $emision));

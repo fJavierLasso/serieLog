@@ -3,7 +3,7 @@ namespace clasesTipo;
 class TextoArray extends Atipo{
 
     protected $valor;
-    protected $nombre;
+    protected $name;
     protected $error;
     private const DIAS = [
         "L",
@@ -31,11 +31,11 @@ class TextoArray extends Atipo{
         "Suspense",
         "Fantasia"
     ];
-    public function __construct($valor, $nombre){
+    public function __construct($valor, $name){
         $this->valor=$valor;
-        $this->nombre = $nombre;
+        $this->name = $name;
     }
-    public function validarEspecifico($value=null){
+    public function validarEspecifico($value){
         if(is_array($value)){
             if(empty(array_diff(self::GENEROS, $value))){
                 $this->error = "La opción seleccionada no existe";
@@ -56,12 +56,12 @@ class TextoArray extends Atipo{
             }
     }
     public function pintar(){
-        switch ( strtoupper($this->nombre)) {
+        switch ( strtoupper($this->name)) {
             case 'GENEROS':
                 print '<div class="checkbox__generos">';
                 foreach (self::GENEROS as $key => $value) {
                     
-                    print '<label for="'.$this->nombre.'"><input type="checkbox" id="'.$this->nombre.'" name="generos[]" value="'.$value.'">'. $value .'</label>';
+                    print '<label for="'.$this->name.'"><input type="checkbox" id="'.$this->name.'" name="generos[]" value="'.$value.'">'. $value .'</label>';
                 }
                 print '</div>';
                 break;
@@ -74,8 +74,8 @@ class TextoArray extends Atipo{
     }
     public function pintarDataList($arr){
         print '<div>';
-        print '<label for="'.$this->nombre.'"> '.$this->nombre.':</label>';
-        print '<select id="'.$this->nombre.'" name="'.$this->nombre.'">';
+        print '<label for="'.$this->name.'"> '.$this->name.':</label>';
+        print '<select id="'.$this->name.'" name="'.$this->name.'">';
         $selected ="";
             foreach ($arr as $key => $value) {
                 ($this->valor==$value)?$selected="selected" : $selected = "";
