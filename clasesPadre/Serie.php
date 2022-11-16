@@ -59,8 +59,10 @@ class Serie
         if (!isset($post['emision'])) {$post['emision'] = 'off';}else{$_POST['emision'] = 'on';};
 
         $file = 'bbdd.txt';
+
         // Open the file to get existing content
         $current = file_get_contents($file);
+
         // Append a new series to the file
         $current .= "<tr>";
         foreach ($post as $key => $value) {
@@ -71,6 +73,7 @@ class Serie
                     foreach ($post['generos'] as $genero) {
                         $current .= $genero . " ";
                     }
+                    $current .= "</td>";
                 }
         }
 

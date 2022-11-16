@@ -16,4 +16,16 @@
 <td>3</td>
 <td>A algunos les gusta</td>
 <td>off</td>
+</tr><tr><td>Seriaza</td>
+<td>Comedia Terror Historico </td><td>Netflix</td>
+<td>L</td>
+<td>5</td>
+<td>Me molo mucho</td>
+<td>off</td>
+</tr><tr><td>Serie humilde</td>
+<td>Comedia </td><td>HBO</td>
+<td>J</td>
+<td>1</td>
+<td>Le falta gancho</td>
+<td>off</td>
 </tr>
