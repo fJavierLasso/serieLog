@@ -13,4 +13,9 @@
 </tr><tr><td>nombre</td><td>holaaaas</td>
 <td>valoracion</td><td>5</td>
 <td>reseña</td><td>pepino</td>
+</tr><tr><td>nombre</td><td>serie de prueba</td>
+<td>emision</td><td></td>
+<td>notificaciones</td><td></td>
+<td>valoracion</td><td>5</td>
+<td>reseña</td><td>Increible</td>
 </tr>
