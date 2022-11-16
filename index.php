@@ -11,9 +11,9 @@ spl_autoload_register(function ($class) {
 
 // ----------------------------------------------
 //Herramientas para debugging!
-// echo "Valores añadidos al post: ";
-// print_r($_POST); 
-// echo ("<hr>"); 
+echo "Valores añadidos al post: ";
+print_r($_POST); 
+echo ("<hr>"); 
 // ----------------------------------------------
 
 $serie = new clasesPadre\Serie($_POST);
@@ -22,6 +22,7 @@ if ($serie->validarGlobal()) {
     $serie->guardar($_POST); //hacer guardar; que guarde los valores en un archivo de texto.
     header("Location: tablaSeries.php");
 }
+
 ?>
 
 <!DOCTYPE html>

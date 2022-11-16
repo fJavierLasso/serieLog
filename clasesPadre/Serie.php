@@ -30,7 +30,7 @@ class Serie
 
     public function validarGlobal()
     {
-        if (!empty($_POST['reseña']) && (!empty($_POST['nombre']))) { //valida sólo si se ha enviado mínimo un formulario. Si el post está empty, no valida nada.
+        if (isset($_POST['valoracion'])) { //valida sólo si se ha enviado mínimo un formulario. Si el post está empty, no valida nada.
             $val = true;
             foreach ($this->valores as $valor) {
                 if (!$valor->validar($valor->getValor())) {
