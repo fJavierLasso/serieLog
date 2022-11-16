@@ -14,7 +14,6 @@ spl_autoload_register(function ($class) {
 // echo "Valores añadidos al post: ";
 // print_r($_POST); 
 // echo ("<hr>"); 
-// echo $_POST['generos'];
 // ----------------------------------------------
 
 $serie = new clasesPadre\Serie($_POST);

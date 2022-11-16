@@ -1,20 +1,19 @@
 <tr><td>Andor</td>
+<td>Fantasia <td>Disney+</td>
+<td>X</td>
 <td>5</td>
-<td>LA MEJOR SERIE DEL MUNDOOOO</td>
+<td>La mejor serie del mundo.</td>
 <td>on</td>
-</tr><tr><td>Obi-Wan</td>
-<td>5</td>
-<td>Leia sale muy salada </td>
-<td>off</td>
-</tr><tr><td>Serie mala</td>
+</tr><tr><td>Serie Mala</td>
+<td>Terror <td>Netflix</td>
+<td>V</td>
 <td>0</td>
-<td>terrible, quiero mis horas de vida de vuelta</td>
+<td>Terriblemente mala.</td>
 <td>off</td>
-</tr><tr><td>ghjkl</td>
-<td>Array</td>
-<td>Netflix</td>
-<td>L</td>
+</tr><tr><td>melodrama generico</td>
+<td>Comedia Romantico Escolar Suspense <td>Otros</td>
+<td>X</td>
 <td>3</td>
-<td>ghjk</td>
-<td>on</td>
+<td>A algunos les gusta</td>
+<td>off</td>
 </tr>

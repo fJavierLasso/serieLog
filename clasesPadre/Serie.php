@@ -64,7 +64,14 @@ class Serie
         // Append a new series to the file
         $current .= "<tr>";
         foreach ($post as $key => $value) {
-                $current .= "<td>" . $value . "</td>\n";
+                if ($key != 'generos') {
+                    $current .= "<td>" . $value . "</td>\n";
+                } else {
+                    $current .= "<td>";
+                    foreach ($post['generos'] as $genero) {
+                        $current .= $genero . " ";
+                    }
+                }
         }
 
         $current .= "</tr>";

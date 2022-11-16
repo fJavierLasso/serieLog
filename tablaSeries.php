@@ -37,6 +37,9 @@ Y la función de que te avise si hay capítulo de serie el día de la semana.-->
         <thead>
             <tr>
                 <th scope="col">Nombre</th>
+                <th scope="col">Géneros</th>
+                <th scope="col">Plataforma</th>
+                <th scope="col">Día de la semana</th>
                 <th scope="col">Nota</th>
                 <th scope="col">Valoración</th>
                 <th scope="col">¿En emisión?</th>
