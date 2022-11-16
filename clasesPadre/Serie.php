@@ -13,7 +13,7 @@ class Serie
         $nombre = isset($post['nombre']) ? $post['nombre'] : null;
         $genero = isset($post['genero']) ? $post['genero'] : null;
         $plataforma = isset($post['plataforma']) ? $post['plataforma'] : null;
-        $emision = isset($post['emision']);
+        $emision = isset($post['emision']) ? 'Si':'No';
         $diaEstreno = isset($post['diaEstreno']) ? $post['diaEstreno'] : null;
         $notificaciones = isset($post['notificaciones']);
         $valoracion = isset($post['valoracion']) ? $post['valoracion'] : null;
@@ -22,16 +22,16 @@ class Serie
         array_push($this->valores, new \clasesTipo\Texto($nombre, 25, "nombre"));
         // array_push($this->valores, new clasesTipo\TextoArray($genero, "genero"));
         // array_push($this->valores, new clasesTipo\TextoArray($plataforma, "plataforma"));
-        array_push($this->valores, new \clasesTipo\Check("emision", $emision));
         // array_push($this->valores, new clasesTipo\TextoArray($diaEstreno, "diaEstreno"));
-        array_push($this->valores, new \clasesTipo\Check("notificaciones", $notificaciones));
         array_push($this->valores, new \clasesTipo\Numero($valoracion, "valoracion"));
         array_push($this->valores, new \clasesTipo\Texto($resena, 500, "reseña"));
+        array_push($this->valores, new \clasesTipo\Check("emision", $emision));
+        array_push($this->valores, new \clasesTipo\Check("notificaciones", $notificaciones));
     }
 
     public function validarGlobal()
     {
-        if (!empty($_POST)) { //valida sólo si se ha enviado mínimo un formulario. Si el post está empty, no valida nada.
+        if (!empty($_POST['reseña']) && (!empty($_POST['nombre']))) { //valida sólo si se ha enviado mínimo un formulario. Si el post está empty, no valida nada.
             $val = true;
             foreach ($this->valores as $valor) {
                 if (!$valor->validar($valor->getValor())) {
@@ -62,9 +62,9 @@ class Serie
         $current = file_get_contents($file);
         // Append a new series to the file
         $current .= "<tr>";
-        foreach ($post as $key => $value) {
+        foreach ($post as $value) {
             
-            $current .= "<td>" . $key . "</td><td>" . $value . "</td>\n";
+            $current .= "<td>" . $value . "</td>\n";
             
         }
         $current .= "</tr>";

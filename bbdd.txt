@@ -1,21 +1,56 @@
-<tr><td>nombre</td><td>Serie1</td>
-<td>emision</td><td></td>
-<td>valoracion</td><td>3</td>
-<td>reseña</td><td>bueeeeno</td>
-</tr><tr><td>nombre</td><td>Serie2</td>
-<td>emision</td><td></td>
-<td>notificaciones</td><td></td>
-<td>valoracion</td><td>0</td>
-<td>reseña</td><td>una puta mierda</td>
-</tr><tr><td>nombre</td><td>asdf</td>
-<td>valoracion</td><td>3</td>
-<td>reseña</td><td>wergqer</td>
-</tr><tr><td>nombre</td><td>holaaaas</td>
-<td>valoracion</td><td>5</td>
-<td>reseña</td><td>pepino</td>
-</tr><tr><td>nombre</td><td>serie de prueba</td>
-<td>emision</td><td></td>
-<td>notificaciones</td><td></td>
-<td>valoracion</td><td>5</td>
-<td>reseña</td><td>Increible</td>
+<tr><td>SerieUno</td>
+<td>5</td>
+<td>Muy buena</td>
+<td>No</td>
+</tr><tr><td>SerieDos</td>
+<td>0</td>
+<td>Una mierda</td>
+<td>Si</td>
+</tr><tr><td>Serie3</td>
+<td>2</td>
+<td>Meh...</td>
+<td>Si</td>
+</tr><tr><td>SerieCinco</td>
+<td>5</td>
+<td>La leche</td>
+<td>No</td>
+</tr><tr><td>SerieSiete</td>
+<td>5</td>
+<td>Fabulosa</td>
+<td>Si</td>
+</tr><tr><td>SerieOchomil</td>
+<td>5</td>
+<td>La mejor</td>
+</tr><tr><td>SerieNuevemil</td>
+<td>5</td>
+<td>Pasote</td>
+<td>Si</td>
+<td>Si</td>
+</tr><tr><td>SerieDiezmil</td>
+<td>0</td>
+<td>una caca</td>
+</tr><tr><td>prueba</td>
+<td>3</td>
+<td>asdf</td>
+</tr><tr><td>sdf</td>
+<td>3</td>
+<td>sdf</td>
+<td>No</td>
+<td>No</td>
+</tr><tr><td>sdf</td>
+<td>3</td>
+<td>sdf</td>
+<td>No</td>
+<td>No</td>
+</tr><tr><td>asdas</td>
+<td>3</td>
+<td>asdsad</td>
+</tr><tr><td>asdasdsada</td>
+<td>3</td>
+<td>asdsad</td>
+<td>Si</td>
+<td>Si</td>
+</tr><tr><td>sdfadsf</td>
+<td>3</td>
+<td>sadfadsf</td>
 </tr>

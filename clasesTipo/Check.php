@@ -3,7 +3,7 @@ namespace clasesTipo;
 
 class Check extends Atipo {
     
-        protected $valor = true; //true o false
+        protected $valor = "no";
         protected $name; //para el label
     
         public function __construct($name, $valor) {
@@ -18,9 +18,9 @@ class Check extends Atipo {
         public function pintar() {
             echo "<label for='$this->name'>$this->name</label>";
             if (isset($_POST[$this->name])) {
-                echo "<input type='checkbox' name='$this->name' value='$this->valor' checked>";
+                echo "<input type='checkbox' name='$this->name' value='Si' checked>";
             } else {
-                echo "<input type='checkbox' name='$this->name' value='$this->valor'>";
+                echo "<input type='checkbox' name='$this->name' value='Si'>";
             }  
         }
 
