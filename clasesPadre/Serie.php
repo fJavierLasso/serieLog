@@ -13,9 +13,9 @@ class Serie
         //Si no tenemos post, inicializo cada valor como null para no tener problemas.
         $nombre = isset($post['nombre']) ? $post['nombre'] : null;
         $genero = isset($post['generos']) ? $post['generos'] : null;
-        $plataforma = isset($post['plataformas']) ? $post['plataformas'] : null;
+        $plataforma = isset($post['plataforma']) ? $post['plataforma'] : null;
         $emision = isset($post['emision']) ? 'Si':'No';
-        $diaEstreno = isset($post['dias']) ? $post['dias'] : null;
+        $diaEstreno = isset($post['dia']) ? $post['dia'] : null;
         $valoracion = isset($post['valoracion']) ? $post['valoracion'] : null;
         $resena = isset($post['reseña']) ? $post['reseña'] : null;
 
