@@ -1,7 +1,7 @@
 <?php
+
+//dependencias: todas las clasesTipo.
 namespace clasesPadre;
-
-
 class Serie
 {
 
@@ -10,19 +10,20 @@ class Serie
 
     public function __construct($post)
     {
+        //Si no tenemos post, inicializo cada valor como null para no tener problemas.
         $nombre = isset($post['nombre']) ? $post['nombre'] : null;
         $genero = isset($post['generos']) ? $post['generos'] : null;
         $plataforma = isset($post['plataformas']) ? $post['plataformas'] : null;
         $emision = isset($post['emision']) ? 'Si':'No';
         $diaEstreno = isset($post['dias']) ? $post['dias'] : null;
-        $notificaciones = isset($post['notificaciones']) ? 'Si':'No';;
         $valoracion = isset($post['valoracion']) ? $post['valoracion'] : null;
         $resena = isset($post['reseña']) ? $post['reseña'] : null;
 
+        //Estructura del formulario.
         array_push($this->valores, new \clasesTipo\Texto($nombre, 25, "nombre"));
         array_push($this->valores, new \clasesTipo\TextoArray($genero, "generos", ["Comedia","Terror","Historico","Romantico","Escolar","Misterio","Suspense","Fantasia"] , false));
-        array_push($this->valores, new \clasesTipo\TextoArray($plataforma, "plataformas", ["Netflix","Amazon Prime","HBO","Disney+","Otros"], true));
-        array_push($this->valores, new \clasesTipo\TextoArray($diaEstreno, "dias", ["L","M","X","J","V","S","D"], true));
+        array_push($this->valores, new \clasesTipo\TextoArray($plataforma, "plataforma", ["Netflix","Amazon Prime","HBO","Disney+","Otros"], true));
+        array_push($this->valores, new \clasesTipo\TextoArray($diaEstreno, "dia", ["L","M","X","J","V","S","D"], true));
         array_push($this->valores, new \clasesTipo\Numero($valoracion, "valoracion"));
         array_push($this->valores, new \clasesTipo\Texto($resena, 500, "reseña"));
         array_push($this->valores, new \clasesTipo\Check("emision", $emision));
