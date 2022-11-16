@@ -1,32 +1,13 @@
-<tr><td>SerieUno</td>
+<tr><td>Andor</td>
 <td>5</td>
-<td>Genial</td>
-<td>off</td>
-</tr><tr><td>Andor</td>
-<td>5</td>
-<td>LA MEJOR SERIE EVER</td>
+<td>LA MEJOR SERIE DEL MUNDOOOO</td>
 <td>on</td>
-</tr><tr><td>SerieDos</td>
+</tr><tr><td>Obi-Wan</td>
+<td>5</td>
+<td>Leia sale muy salada </td>
+<td>off</td>
+</tr><tr><td>Serie mala</td>
 <td>0</td>
-<td>Una caca</td>
-<td>off</td>
-</tr><tr><td>asdf</td>
-<td>3</td>
-<td>sadfsdfasdf</td>
-<td>off</td>
-</tr><tr><td>asdf</td>
-<td>3</td>
-<td>sadfsadfadsf</td>
-<td>on</td>
-</tr><tr><td>pruebaTodo</td>
-<td>Array</td>
-<td>Netflix</td>
-<td>L</td>
-<td>5</td>
-<td>la leche</td>
-<td>on</td>
-</tr><tr><td>pruebisima</td>
-<td>3</td>
-<td>la pera</td>
+<td>terrible, quiero mis horas de vida de vuelta</td>
 <td>off</td>
 </tr>

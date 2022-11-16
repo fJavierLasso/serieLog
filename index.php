@@ -11,9 +11,9 @@ spl_autoload_register(function ($class) {
 
 // ----------------------------------------------
 //Herramientas para debugging!
-echo "Valores añadidos al post: ";
-print_r($_POST); 
-echo ("<hr>"); 
+// echo "Valores añadidos al post: ";
+// print_r($_POST); 
+// echo ("<hr>"); 
 // ----------------------------------------------
 
 $serie = new clasesPadre\Serie($_POST);
@@ -57,6 +57,8 @@ if ($serie->validarGlobal()) {
 <?php
     $serie->pintarGlobal();
     ?>
+
+    <a href="tablaSeries.php">Ver series registradas</a>
 
 </div>
 </body>
