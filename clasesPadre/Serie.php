@@ -62,14 +62,16 @@ class Serie
         $current = file_get_contents($file);
         // Append a new series to the file
         $current .= "<tr>";
-        foreach ($post as $value) {
+        foreach ($post as $key => $value) {
             
-            $current .= "<td>" . $value . "</td>\n";
-            
+            if ($key !='emision'|| $key != 'notificaciones') {
+                $current .= "<td>" . $value . "</td>\n";
+            }
         }
-        $current .= "</tr>";
 
-        echo $current;
+        if (!isset($_POST['emision'])) {$current .= "<td>-</td>";};
+        if (!isset($_POST['notificaciones'])) {$current .= "<td>-</td>";};
+        $current .= "</tr>";
         // Write the contents back to the file
         file_put_contents($file, $current);
 

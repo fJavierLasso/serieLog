@@ -40,6 +40,7 @@ Y la función de que te avise si hay capítulo de serie el día de la semana.-->
                 <th scope="col">Nota</th>
                 <th scope="col">Valoración</th>
                 <th scope="col">¿En emisión?</th>
+                <th scope="col">¿Notificaciones?</th>
             </tr>
         </thead>
         <?php
