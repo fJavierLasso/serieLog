@@ -18,4 +18,15 @@
 <td>3</td>
 <td>sadfsadfadsf</td>
 <td>on</td>
+</tr><tr><td>pruebaTodo</td>
+<td>Array</td>
+<td>Netflix</td>
+<td>L</td>
+<td>5</td>
+<td>la leche</td>
+<td>on</td>
+</tr><tr><td>pruebisima</td>
+<td>3</td>
+<td>la pera</td>
+<td>off</td>
 </tr>

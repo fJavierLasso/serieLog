@@ -7,17 +7,14 @@ abstract class Atipo {
     protected $valor;
 
     public function validar($valor = null){ //devuelve true si el valor no es nulo ni está vacío + validaciones específicas de cada tipo.
-        if (is_bool($valor)) {
+        if ($valor != "" && $valor != null) {
             return $this->validarEspecifico($valor);
         } else {
-            if (is_null($valor) || $valor == "") {
-                $this->error = "El campo $this->name no puede estar vacío<br>";
-                return false;
-            } else {
-                return $this->validarEspecifico($valor);
-            }
-        }
+            $this->error = "El campo $this->name no puede estar vacío<br>";
+            return false;
     }
+}
+
 
     function imprimirError() {
         if ($this->error != null) {
