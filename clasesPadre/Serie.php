@@ -11,18 +11,18 @@ class Serie
     public function __construct($post)
     {
         $nombre = isset($post['nombre']) ? $post['nombre'] : null;
-        $genero = isset($post['genero']) ? $post['genero'] : null;
-        $plataforma = isset($post['plataforma']) ? $post['plataforma'] : null;
+        $genero = isset($post['generos']) ? $post['generos'] : null;
+        $plataforma = isset($post['plataformas']) ? $post['plataformas'] : null;
         $emision = isset($post['emision']) ? 'Si':'No';
-        $diaEstreno = isset($post['diaEstreno']) ? $post['diaEstreno'] : null;
+        $diaEstreno = isset($post['dias']) ? $post['dias'] : null;
         $notificaciones = isset($post['notificaciones']) ? 'Si':'No';;
         $valoracion = isset($post['valoracion']) ? $post['valoracion'] : null;
         $resena = isset($post['reseña']) ? $post['reseña'] : null;
 
         array_push($this->valores, new \clasesTipo\Texto($nombre, 25, "nombre"));
-        //array_push($this->valores, new \clasesTipo\TextoArray($genero, "generos"));
-        //array_push($this->valores, new \clasesTipo\TextoArray($plataforma, "plataformas"));
-        //array_push($this->valores, new \clasesTipo\TextoArray($diaEstreno, "dias"));
+        array_push($this->valores, new \clasesTipo\TextoArray($genero, "generos"));
+        array_push($this->valores, new \clasesTipo\TextoArray($plataforma, "plataformas"));
+        array_push($this->valores, new \clasesTipo\TextoArray($diaEstreno, "dias"));
         array_push($this->valores, new \clasesTipo\Numero($valoracion, "valoracion"));
         array_push($this->valores, new \clasesTipo\Texto($resena, 500, "reseña"));
         array_push($this->valores, new \clasesTipo\Check("emision", $emision));
