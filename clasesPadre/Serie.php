@@ -15,7 +15,7 @@ class Serie
         $plataforma = isset($post['plataforma']) ? $post['plataforma'] : null;
         $emision = isset($post['emision']) ? 'Si':'No';
         $diaEstreno = isset($post['diaEstreno']) ? $post['diaEstreno'] : null;
-        $notificaciones = isset($post['notificaciones']);
+        $notificaciones = isset($post['notificaciones']) ? 'Si':'No';;
         $valoracion = isset($post['valoracion']) ? $post['valoracion'] : null;
         $resena = isset($post['reseña']) ? $post['reseña'] : null;
 
@@ -26,7 +26,6 @@ class Serie
         array_push($this->valores, new \clasesTipo\Numero($valoracion, "valoracion"));
         array_push($this->valores, new \clasesTipo\Texto($resena, 500, "reseña"));
         array_push($this->valores, new \clasesTipo\Check("emision", $emision));
-        array_push($this->valores, new \clasesTipo\Check("notificaciones", $notificaciones));
     }
 
     public function validarGlobal()
@@ -57,20 +56,17 @@ class Serie
     public function guardar($post)
     {
 
+        if (!isset($post['emision'])) {$post['emision'] = 'off';}else{$_POST['emision'] = 'on';};
+
         $file = 'bbdd.txt';
         // Open the file to get existing content
         $current = file_get_contents($file);
         // Append a new series to the file
         $current .= "<tr>";
         foreach ($post as $key => $value) {
-            
-            if ($key !='emision'|| $key != 'notificaciones') {
                 $current .= "<td>" . $value . "</td>\n";
-            }
         }
 
-        if (!isset($_POST['emision'])) {$current .= "<td>-</td>";};
-        if (!isset($_POST['notificaciones'])) {$current .= "<td>-</td>";};
         $current .= "</tr>";
         // Write the contents back to the file
         file_put_contents($file, $current);

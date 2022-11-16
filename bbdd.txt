@@ -1,13 +1,13 @@
 <tr><td>SerieUno</td>
-<td>3</td>
-<td>Bueeeno...</td>
-<td>-</td><td>-</td></tr><tr><td>SerieDos</td>
 <td>5</td>
-<td>INCREIBLE</td>
+<td>Genial</td>
+<td>off</td>
+</tr><tr><td>Andor</td>
+<td>5</td>
+<td>LA MEJOR SERIE EVER</td>
 <td>on</td>
-<td>on</td>
-</tr><tr><td>SerieTres</td>
+</tr><tr><td>SerieDos</td>
 <td>0</td>
-<td>una mierda</td>
-<td>on</td>
-<td>-</td></tr>
+<td>Una caca</td>
+<td>off</td>
+</tr>
