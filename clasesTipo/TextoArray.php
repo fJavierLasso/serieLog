@@ -7,32 +7,6 @@ class TextoArray extends Atipo{
     protected $error;
     protected $atributos = array();
     protected $select = false;
-    private const DIAS = [
-        "L",
-        "M",
-        "X",
-        "J",
-        "V",
-        "S",
-        "D"
-    ];
-    private const PLATAFORMAS = [
-        "Netflix",
-        "Amazon Prime",
-        "HBO",
-        "Disney+",
-        "Otros"
-    ];
-    private const GENEROS = [
-        "Comedia",
-        "Terror",
-        "Historico",
-        "Romantico",
-        "Escolar",
-        "Misterio",
-        "Suspense",
-        "Fantasia"
-    ];
     public function __construct($valor, $name, $atributos, $select){
         $this->valor=$valor;
         $this->name = $name;
@@ -44,56 +18,27 @@ class TextoArray extends Atipo{
         }
     }
     public function validarEspecifico($value){
-       
+        if(is_string($value))
         return (in_array($value, $this->atributos));
-
-       
-       
-        // if(is_array($value)){
-        //     if(empty(array_diff(self::GENEROS, $value))){
-        //         $this->error = "La opción seleccionada no existe";
-        //         return false;
-        //     }else{
-        //         $this->valor = $value;
-        //         return true;
-        //     }
-        // }
-        // else{
-        //     if (!(in_array($value, self::DIAS)) && !(in_array($value, self::PLATAFORMAS)) ){
-        //         $this->error="La opción seleccionada no existe";
-        //         return false;
-        //         }else {
-        //             $this->valor = $value;
-        //             return true;       
-        //         }
-        //     }
+        else{
+            $esValido = true;
+            foreach ($value as $key => $value) {
+                if(!(in_array($value, $this->atributos))) $esValido=false;
+            }
+            return $esValido;
+        }
     }
     public function pintar(){
 
         if ($this->select) {
             //pinto un select con this atributos
+            $this->pintarSelect($this->atributos);
         } else {
             //pinto checkboxes con this atributos
+            $this->pintarCheckbox($this->atributos);
         }
-
-
-        // switch ( strtoupper($this->name)) {
-        //     case 'GENEROS':
-        //         print '<div class="checkbox__generos">';
-        //         foreach (self::GENEROS as $key => $value) {
-                    
-        //             print '<label for="'.$this->name.'"><input type="checkbox" id="'.$this->name.'" name="generos[]" value="'.$value.'">'. $value .'</label>';
-        //         }
-        //         print '</div>';
-        //         break;
-        //     case 'PLATAFORMAS':
-        //         $this->pintarDataList(self::PLATAFORMAS);break;
-        //     case 'DIAS':
-        //         $this->pintarDataList(self::DIAS);break;            
-        //     default:break;
-        // }
     }
-    public function pintarDataList($arr){
+    public function pintarSelect($arr){
         print '<div>';
         print '<label for="'.$this->name.'"> '.$this->name.':</label>';
         print '<select id="'.$this->name.'" name="'.$this->name.'">';
@@ -104,6 +49,13 @@ class TextoArray extends Atipo{
             }
         print '</select>';
         print '</div>';
+    }
+    public function pintarCheckbox($arr){
+        print '<div class="checkbox__"'.$this->name.'>';
+                foreach ($arr as $key => $value) {
+                    print '<label for="'.$this->name.'"><input type="checkbox" id="'.$this->name.'" name="'.$this->name.'[]" value="'.$value.'">'. $value .'</label>';
+                }
+                print '</div>';
     }
     public function getValor(){return $this->valor;}
     public function setValor($valor){$this->valor = $valor;return $this;}
