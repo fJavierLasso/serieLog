@@ -1,7 +1,8 @@
 <?php
 
-//dependencias: todas las clasesTipo.
+
 namespace clasesPadre;
+
 class Serie
 {
 
@@ -11,6 +12,7 @@ class Serie
     public function __construct($post)
     {
         //Si no tenemos post, inicializo cada valor como null para no tener problemas.
+        //Si tenemos post, inicializo cada valor con el valor del post. (Ese Jorge ahi!)
         $nombre = isset($post['nombre']) ? $post['nombre'] : null;
         $genero = isset($post['generos']) ? $post['generos'] : null;
         $plataforma = isset($post['plataforma']) ? $post['plataforma'] : null;
@@ -20,13 +22,13 @@ class Serie
         $resena = isset($post['reseña']) ? $post['reseña'] : null;
 
         //Estructura del formulario.
-        array_push($this->valores, new \clasesTipo\Texto($nombre, 25, "nombre"));
-        array_push($this->valores, new \clasesTipo\TextoArray($genero, "generos", ["Comedia","Terror","Historico","Romantico","Escolar","Misterio","Suspense","Fantasia"] , false));
-        array_push($this->valores, new \clasesTipo\TextoArray($plataforma, "plataforma", ["Netflix","Amazon Prime","HBO","Disney+","Otros"], true));
-        array_push($this->valores, new \clasesTipo\TextoArray($diaEstreno, "dia", ["L","M","X","J","V","S","D"], true));
-        array_push($this->valores, new \clasesTipo\Numero($valoracion, "valoracion"));
-        array_push($this->valores, new \clasesTipo\Texto($resena, 500, "reseña"));
-        array_push($this->valores, new \clasesTipo\Check("emision", $emision));
+        array_push($this->valores, new \clasesTipo\Texto        ($nombre,"nombre", 25));
+        array_push($this->valores, new \clasesTipo\TextoArray   ($genero, "generos", false, ["Comedia","Terror","Historico","Romantico","Escolar","Misterio","Suspense","Fantasia"]));
+        array_push($this->valores, new \clasesTipo\TextoArray   ($plataforma, "plataforma", true, ["Netflix","Amazon Prime","HBO","Disney+","Otros"]));
+        array_push($this->valores, new \clasesTipo\TextoArray   ($diaEstreno, "dia", true, ["L","M","X","J","V","S","D"]));
+        array_push($this->valores, new \clasesTipo\Numero       ($valoracion, "valoracion"));
+        array_push($this->valores, new \clasesTipo\Texto        ($resena, "reseña", 500));
+        array_push($this->valores, new \clasesTipo\Check        ($emision, "emision"));
     }
 
     public function validarGlobal()
@@ -35,7 +37,6 @@ class Serie
             $val = true;
             foreach ($this->valores as $valor) {
                 if (!$valor->validar($valor->getValor())) {
-                    $valor->imprimirError();
                     $val = false;
                 }
             }

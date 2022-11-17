@@ -5,30 +5,20 @@ class Numero extends Atipo {
     private const MIN_VALOR=0;
     private const MAX_VALOR=5;
 
-    public function __construct ($valor,$name) {
-            $this->valor=$valor;
-            $this->name=$name;
-    }
-
-    public function getValor() { return $this->valor; }
-    public function setValor($valor) { $this->valor = $valor; }
-    public function getNombre() { return $this->name; }
-    public function setNombre($name) { $this->name = $name; }
-
-
     function validarEspecifico ($valor) {
-        if ($valor>=self::MIN_VALOR && $valor<=self::MAX_VALOR): return true;
+
+        if ($valor>=self::MIN_VALOR && $valor<=self::MAX_VALOR): 
+            return true;
         else: 
-            $this->error="Fuera del rango permitido, debe estar entre 0 y 5 (ambos incluídos).";
+            $this->error="Fuera del rango permitido, debe estar entre 0 y 5 (ambos incluidos).";
             return false;
         endif;
     }
 
     function pintar() {
-        $input = '<br><label for="'.$this->name.'">¿Cuánto te gustó?</label><br>
-        <input type="range" value="'.$this->valor.'" min="'.self::MIN_VALOR.'" max="'.self::MAX_VALOR.'" name="'.$this->name.'" id="'.$this->name.'"><br>';
-
-        print($input);
+        echo "<label for='$this->name'>$this->name</label>";
+        echo "<input type='range' name='$this->name' min='".self::MIN_VALOR."' max='".self::MAX_VALOR."' value='$this->valor'>";
+        $this->imprimirError();
     }
 }
 ?>

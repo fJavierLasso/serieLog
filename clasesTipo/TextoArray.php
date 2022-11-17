@@ -1,20 +1,15 @@
 <?php
 namespace clasesTipo;
 class TextoArray extends Atipo{
-    private $atributos = array();
-    private $select = false; //true para generar un select, false para generar checkboxes
-    public function __construct($valor, $name, $atributos, $select){
+    private $atributos;
+    private $select; //true para generar un select, false para generar checkboxes
+    public function __construct($valor, $name, $select, $atributos){
 
         $this->valor=$valor;
         $this->name = $name;
+        $this->select = $select;
+        $this->atributos = $atributos;
 
-        if ($select) {
-            $this->select = true;
-        }
-
-        foreach ($atributos as $atributo) {
-            array_push($this->atributos,$atributo);
-        }
     }
     public function validarEspecifico($value){
         if(is_string($value))
@@ -36,6 +31,7 @@ class TextoArray extends Atipo{
             //pinto checkboxes con this atributos
             $this->pintarCheckbox($this->atributos);
         }
+        $this->imprimirError();
         
     }
     public function pintarSelect($arr){
@@ -58,7 +54,5 @@ class TextoArray extends Atipo{
                 }
                 print '</div>';
     }
-    public function getValor(){return $this->valor;}
-    public function setValor($valor){$this->valor = $valor;return $this;}
 }
 ?>

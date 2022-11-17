@@ -10,17 +10,11 @@ class Texto extends Atipo
     public const LIMITE_LONG_TEXTAREA = 80; //limite para input tipo texto, desde estos chars es textarea
 
     //constructor (se valida en serie)
-    public function __construct($valor, $longitud, $name)
+    public function __construct($valor, $name, $longitud)
     {
         $this->valor = $valor;
         $this->longitud = $longitud;
         $this->name = $name;
-    }
-
-    //getters y setters
-    public function getValor()
-    {
-        return $this->valor;
     }
 
     //métodos
@@ -55,6 +49,7 @@ class Texto extends Atipo
             echo "<input type='text' id='" . $this->name . "' name='" . $this->name . "' placeholder='Serie...' value='" . $this->valor . "'>";
         }
         echo "<br>";
+        $this->imprimirError();
     }
 
 

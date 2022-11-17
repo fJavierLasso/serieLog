@@ -3,7 +3,6 @@ namespace clasesTipo;
 
 abstract class Atipo
 {
-
     private $error;
     private $name;
     private $valor;
@@ -13,23 +12,27 @@ abstract class Atipo
         if ($valor != "" && $valor != null) {
             return $this->validarEspecifico($valor);
         } else {
-            $this->error = "El campo $this->name no puede estar vacío<br>";
+            $this->error = "El campo $this->name no puede estar vacío<br>"; //No está devolviendo this name.
             return false;
         }
     }
 
-
-    function imprimirError()
+    public function getValor() { return $this->valor; }
+    public function imprimirError()
     {
         if ($this->error != null) {
             echo "<div class='error'>$this->error</div>";
             return false; //Si hay errores devuelve un false!
-        }
+        };
     }
 
+    public function __construct($valor, $name) {
+        $this->valor = $valor;
+        $this->name = $name;
+    }
+
+    abstract public function pintar();
+
     abstract public function validarEspecifico($valor); //A rellenar en la clase específica
-
-    abstract public function pintar(); //Metodo para que cada clase pinte el input que le corresponde
-
 }
 ?>

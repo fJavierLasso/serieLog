@@ -3,11 +3,6 @@ namespace clasesTipo;
 
 class Check extends Atipo {
     
-        public function __construct($name, $valor) {
-            $this->valor = $valor;
-            $this->name = $name;
-        }
-    
         public function validarEspecifico($valor) {
             return ($valor == true || $valor == false);
         }
@@ -19,12 +14,8 @@ class Check extends Atipo {
             } else {
                 echo "<input type='checkbox' name='$this->name'>";
             }  
+            $this->imprimirError();
         }
-
-        public function getValor() {
-            return $this->valor;
-        }
-    
     
 }
 ?>
