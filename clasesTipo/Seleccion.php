@@ -42,7 +42,7 @@ class Seleccion extends Atipo
         print '<select id="' . $this->getName() . '" name="' . $this->getName() . '">';
         $selected = "";
         foreach ($arr as $value) {
-            ($this->valor == $value) ? $selected = "selected" : $selected = "";
+            ($this->getValor() == $value) ? $selected = "selected" : $selected = "";
             print '<option value="' . $value . '" ' . $selected . '>' . $value . '</option>';
         }
         print '</select>';
@@ -51,8 +51,10 @@ class Seleccion extends Atipo
     public function pintarCheckbox($arr)
     {
         print '<div class="checkbox__"' . $this->getName() . '>';
+        $checked ="";
         foreach ($arr as $value) {
-            print '<label for="' . $value . '"><input type="checkbox" id="' .$value . '" name="' . $value . '[]" value="' .$value . '">' . $value. '</label>';
+            if(!empty($this->getValor())) (in_array($value, $this->getValor()))? $checked = "checked" : $checked = "";
+            print '<label for="' . $this->getName() . '"><input type="checkbox" id="' .$value . '" name="' . $this->getName() . '[]" value="' .$value . '" '.$checked.'>' . $value. '</label>';
         }
         print '</div>';
     }
