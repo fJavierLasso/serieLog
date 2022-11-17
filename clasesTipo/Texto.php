@@ -3,11 +3,7 @@ namespace clasesTipo;
 
 class Texto extends Atipo
 {
-
-    protected $valor; //valor es lo que introduce el usuario
     private $longitud;
-    protected $name; //name es el nombre que tiene el input, se reflejará en el label
-    protected $error; //poner como privi
     //constantes públicas para poder utilizarse fuera
     public const LONG_NOMBRE = 25;
     public const LONG_DESCRIPCION = 500;
@@ -22,14 +18,6 @@ class Texto extends Atipo
     }
 
     //getters y setters
-    public function setName($name)
-    {
-        $this->name = $name;
-    }
-    public function getName()
-    {
-        return $this->name;
-    }
     public function getValor()
     {
         return $this->valor;
@@ -54,16 +42,17 @@ class Texto extends Atipo
         }
     }
 
-    function pintar(){
+    function pintar()
+    {
         //si supera LIMITE_LONG_TEXTAREA (80 chars) pinta un textarea, si no, un input tipo texto
-        if ($this->longitud >= self::LIMITE_LONG_TEXTAREA){
-            echo "<label for='".$this->name."'>".$this->name."</label>";
+        if ($this->longitud >= self::LIMITE_LONG_TEXTAREA) {
+            echo "<label for='" . $this->name . "'>" . $this->name . "</label>";
             echo "<br>";
-            echo "<textarea id='".$this->name."' name='".$this->name."' placeholder='Me pareció...' rows='10' cols='50'>".$this->valor."</textarea>";
-        }else{
-            echo "<label for='".$this->name."'>".$this->name."</label>";
+            echo "<textarea id='" . $this->name . "' name='" . $this->name . "' placeholder='Me pareció...' rows='10' cols='50'>" . $this->valor . "</textarea>";
+        } else {
+            echo "<label for='" . $this->name . "'>" . $this->name . "</label>";
             echo "<br>";
-            echo "<input type='text' id='".$this->name."' name='".$this->name."' placeholder='Serie...' value='".$this->valor."'>";
+            echo "<input type='text' id='" . $this->name . "' name='" . $this->name . "' placeholder='Serie...' value='" . $this->valor . "'>";
         }
         echo "<br>";
     }

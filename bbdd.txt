@@ -46,4 +46,10 @@
 <td>0</td>
 <td>muy mal</td>
 <td>on</td>
+</tr><tr><td>pruebaPrivates</td>
+<td>Romantico Escolar Misterio </td><td>Disney+</td>
+<td>L</td>
+<td>5</td>
+<td>Una pasadisima</td>
+<td>off</td>
 </tr>

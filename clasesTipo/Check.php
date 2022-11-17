@@ -3,9 +3,6 @@ namespace clasesTipo;
 
 class Check extends Atipo {
     
-        protected $valor;
-        protected $name; //para el label
-    
         public function __construct($name, $valor) {
             $this->valor = $valor;
             $this->name = $name;
