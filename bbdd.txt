@@ -52,4 +52,16 @@
 <td>5</td>
 <td>Una pasadisima</td>
 <td>off</td>
+</tr><tr><td>Prueba</td>
+<td>Disney+</td>
+<td>L</td>
+<td>0</td>
+<td>una mierda</td>
+<td>off</td>
+</tr><tr><td>sdfasdfasd</td>
+<td>Terror </td><td>Netflix</td>
+<td>L</td>
+<td>3</td>
+<td>asdfadsf</td>
+<td>off</td>
 </tr>

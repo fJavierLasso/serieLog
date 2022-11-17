@@ -22,13 +22,13 @@ class Serie
         $resena = isset($post['reseña']) ? $post['reseña'] : null;
 
         //Estructura del formulario.
-        array_push($this->valores, new \clasesTipo\Texto        ($nombre,"nombre", 25));
-        array_push($this->valores, new \clasesTipo\TextoArray   ($genero, "generos", false, ["Comedia","Terror","Historico","Romantico","Escolar","Misterio","Suspense","Fantasia"]));
-        array_push($this->valores, new \clasesTipo\TextoArray   ($plataforma, "plataforma", true, ["Netflix","Amazon Prime","HBO","Disney+","Otros"]));
-        array_push($this->valores, new \clasesTipo\TextoArray   ($diaEstreno, "dia", true, ["L","M","X","J","V","S","D"]));
-        array_push($this->valores, new \clasesTipo\Numero       ($valoracion, "valoracion"));
-        array_push($this->valores, new \clasesTipo\Texto        ($resena, "reseña", 500));
-        array_push($this->valores, new \clasesTipo\Check        ($emision, "emision"));
+        array_push($this->valores, new \clasesTipo\Texto       ($nombre,"nombre", 25));
+        array_push($this->valores, new \clasesTipo\Seleccion   ($genero, "generos", false, ["Comedia","Terror","Historico","Romantico","Escolar","Misterio","Suspense","Fantasia"]));
+        array_push($this->valores, new \clasesTipo\Seleccion   ($plataforma, "plataforma", true, ["Netflix","Amazon Prime","HBO","Disney+","Otros"]));
+        array_push($this->valores, new \clasesTipo\Seleccion   ($diaEstreno, "dia", true, ["L","M","X","J","V","S","D"]));
+        array_push($this->valores, new \clasesTipo\Numero      ($valoracion, "valoracion"));
+        array_push($this->valores, new \clasesTipo\Texto       ($resena, "reseña", 500));
+        array_push($this->valores, new \clasesTipo\Seleccion   ($emision, "emision",false, ["En emisión"]));
     }
 
     public function validarGlobal()
