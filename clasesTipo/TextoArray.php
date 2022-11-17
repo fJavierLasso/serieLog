@@ -51,6 +51,7 @@ class TextoArray extends Atipo{
         print '</div>';
     }
     public function pintarCheckbox($arr){
+        
         print '<div class="checkbox__"'.$this->name.'>';
                 foreach ($arr as $key => $value) {
                     print '<label for="'.$this->name.'"><input type="checkbox" id="'.$this->name.'" name="'.$this->name.'[]" value="'.$value.'">'. $value .'</label>';
