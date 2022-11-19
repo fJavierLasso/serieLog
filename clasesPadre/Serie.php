@@ -3,6 +3,10 @@
 
 namespace clasesPadre;
 
+use clasesTipo\Texto;
+use clasesTipo\Numero;
+use clasesTipo\Seleccion;
+
 class Serie
 {
 
@@ -22,28 +26,29 @@ class Serie
         $resena = isset($post['reseña']) ? $post['reseña'] : null;
 
         //Estructura del formulario.
-        array_push($this->valores, new \clasesTipo\Texto       ($nombre,"nombre", 25));
-        array_push($this->valores, new \clasesTipo\Seleccion   ($genero, "generos", false, ["Comedia","Terror","Historico","Romantico","Escolar","Misterio","Suspense","Fantasia"]));
-        array_push($this->valores, new \clasesTipo\Seleccion   ($plataforma, "plataforma", true, ["Netflix","Amazon Prime","HBO","Disney+","Otros"]));
-        array_push($this->valores, new \clasesTipo\Seleccion   ($diaEstreno, "dia", true, ["L","M","X","J","V","S","D"]));
-        array_push($this->valores, new \clasesTipo\Numero      ($valoracion, "valoracion"));
-        array_push($this->valores, new \clasesTipo\Texto       ($resena, "reseña", 500));
-        array_push($this->valores, new \clasesTipo\Seleccion   ($emision, "emision",false, ["En emisión"]));
+        array_push($this->valores, new Texto       ($nombre,"nombre", Texto::LONG_NOMBRE));
+        array_push($this->valores, new Seleccion   ($genero, "generos", false, ["Comedia","Terror","Historico","Romantico","Escolar","Misterio","Suspense","Fantasia"]));
+        array_push($this->valores, new Seleccion   ($plataforma, "plataforma", true, ["Netflix","Amazon Prime","HBO","Disney+","Otros"]));
+        array_push($this->valores, new Seleccion   ($emision, "emision",false, ["En emisión"]));
+        array_push($this->valores, new Seleccion   ($diaEstreno, "dia", true, ["L","M","X","J","V","S","D"]));
+        array_push($this->valores, new Numero      ($valoracion, "valoracion"));
+        array_push($this->valores, new Texto       ($resena, "reseña", Texto::LONG_DESCRIPCION));
     }
 
     public function validarGlobal()
     {
         if (isset($_POST['valoracion'])) { //valida sólo si se ha enviado mínimo un formulario. Si el post está empty, no valida nada.
-            $val = true;
+            $val = true; //de serie la validación es true
             foreach ($this->valores as $valor) {
                 if (!$valor->validar($valor->getValor())) {
-                    $val = false;
+                    $val = false; //si SOLAMENTE UN valor no ha sido validado, la validación devuelve false
                 }
             }
             return $val;
         }
     }
     
+    //pintar todo el formulario
     public function pintarGlobal()
     {
         echo "<form action='index.php' method='post'>";
@@ -55,6 +60,7 @@ class Serie
         echo "<input type='submit' value='Enviar' class='btn btn-primary'></form>";
     }
 
+    //guardado en BD
     public function guardar($post)
     {
 

@@ -10,7 +10,6 @@ class Numero extends Atipo {
     }
 
     function validarEspecifico ($valor) {
-
         if ($valor>=self::MIN_VALOR && $valor<=self::MAX_VALOR): 
             return true;
         else: 

@@ -3,7 +3,7 @@ namespace clasesTipo;
 
 abstract class Atipo
 {
-    private $error;
+    protected $error;
     private $name;
     private $valor;
 
@@ -32,7 +32,7 @@ abstract class Atipo
         };
     }
 
-    abstract public function pintar();
+    abstract public function pintar(); //A rellenar en la clase específica
 
     abstract public function validarEspecifico($valor); //A rellenar en la clase específica
 }
